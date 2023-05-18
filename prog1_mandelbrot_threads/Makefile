@@ -1,6 +1,9 @@
 
 CXX=g++ -m64
-CXXFLAGS=-I../common -Iobjs/ -O3 -std=c++11 -Wall
+CXXFLAGS=-I../common -Iobjs/ -O3 -std=c++11 -Wall -fPIC
+
+debug: CXXFLAGS += -DDEBUG -g
+
 
 APP_NAME=mandelbrot
 OBJDIR=objs
@@ -19,6 +22,8 @@ dirs:
 
 clean:
 		/bin/rm -rf $(OBJDIR) *.ppm *~ $(APP_NAME)
+
+debug: $(APP_NAME)
 
 OBJS=$(OBJDIR)/main.o $(OBJDIR)/mandelbrotSerial.o $(OBJDIR)/mandelbrotThread.o $(PPM_OBJ)
 
