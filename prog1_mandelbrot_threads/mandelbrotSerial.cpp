@@ -102,7 +102,7 @@ void mandelbrotStepSerial(
   float dx = (x1 - x0) / width;
   float dy = (y1 - y0) / height;
 
-  for (int j = startRow; j < height; j += step)
+  for (int j = startRow; j < height; j += step) // 太聪明了！！！
   {
     for (int i = 0; i < width; ++i)
     {
